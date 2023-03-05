@@ -3,11 +3,11 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "agenda";
+$dbname = "agenda";
 
 try {
 
-    $connect = new PDO("mysql:host$host;dbname=$db", $user, $pass);
+    $connect = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
 
     //Ativar o modo de erros
 

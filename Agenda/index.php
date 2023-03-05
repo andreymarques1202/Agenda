@@ -1,24 +1,44 @@
 <?php
-    include_once("config/url.php");
+    include_once("templates/header.php");
+    
     
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- BOOTSTRAP -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- FONT-AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="<?= $BASE_URL ?>css/style.css">
-    <title>Agenda de Contatos</title>
-</head>
-<body>
-    <h1>Testando ...</h1>
-    <i class="fas fa-eye"></i>
-</body>
-</html>
+    <div class="container">
+        <?php if(isset($printMsg) && $printMsg != ''): ?>
+        <p id="msg"><?= $printMsg ?></p>
+        <?php endif; ?>
+        <h1 id="main-title">Minha Agenda</h1>
+        <?php if(count($contacts) > 0): ?>
+            <table class="table" id="contacts-table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($contacts as $contact): ?>
+                        <tr>
+                            <td scope="row"><?= $contact['id'] ?></td>
+                            <td scope="row"><?= $contact['name'] ?></td>
+                            <td scope="row"><?= $contact['phone'] ?></td>
+                            <td class="actions">
+                                <a href="#"><i class="fas fa-eye check-icon"></i></a>
+                                <a href="#"><i class="fas fa-edit edit-icon"></i></a>
+                                <button type="submit"><i class="fas fa-times delete-icon"></i></button>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php else: ?>
+        <p id="empty-list-text">Ainda não há contatos na sua agenda, <a href="<?= $BASE_URL ?>create.php">Clique aqui para adicionar</a>.</p>
+        <?php endif; ?>
+    </div>
+
+<?php
+    include_once("templates/footer.php");
+?>

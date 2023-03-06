@@ -26,13 +26,13 @@ use PSpell\Config;
     <!-- FONT-AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSS -->
-    <link rel="stylesheet" href="<?= $BASE_URL ?>css/style.css">
+    <link rel="stylesheet" href="<?= $BASE_URL ?>/css/style.css">
     <title>Agenda de Contatos</title>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="<? $BASE_URL ?>index.php">
+            <a class="navbar-brand" href="<? $BASE_URL ?>/index.php">
                 <img src="<?= $BASE_URL ?>img/logo.svg" alt="Agenda">
             </a>
             <div class="navbar-nav">

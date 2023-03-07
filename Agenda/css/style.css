@@ -37,6 +37,14 @@
     color: #1e7e34;
 }
 
+.edit-icon {
+    color: #007bff;
+}
+
+.delete-form {
+    display: inline-block;
+}
+
 .delete-icon {
     color: #bd2130;
 }
@@ -47,8 +55,8 @@
     padding: 0;
 }
 
-.edit-icon {
-    color: #007bff;
+.delete-icon {
+    color: #bd2130;
 }
 
 #empty-list-text {
@@ -96,4 +104,12 @@
 
 #create-form, #edit-form {
     max-width: 500px;
+}
+
+/* MOBILE */
+
+@media(max-width: 480px) {
+    #home-link {
+        display: none;
+    }
 }
